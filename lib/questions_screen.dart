@@ -34,10 +34,10 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   }
 
   void generateNew() {
-    final _random = Random();
+    final random = Random();
     setState(() {
-      targetColIndex = numbers[_random.nextInt(numbers.length)];
-      targetRowIndex = numbers[_random.nextInt(numbers.length)];
+      targetColIndex = numbers[random.nextInt(numbers.length)];
+      targetRowIndex = numbers[random.nextInt(numbers.length)];
     });
   }
 
@@ -116,16 +116,6 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                             } else {
                               showWrongMessage(context, targetColIndex, targetRowIndex);
                             }
-                            // if ((colIndex == targetColIndex &&
-                            //         rowIndex == targetRowIndex) ||
-                            //     (colIndex == targetRowIndex &&
-                            //         rowIndex == targetColIndex)) {
-                            //   //print('Column $targetColIndex, Row $targetRowIndex has been pressed');
-                            //   showCorrectMessage(context);
-                            //   generateNew();
-                            // } else {
-                            //   showWrongMessage(context);
-                            // }
                           },
                           child:
                           Container(

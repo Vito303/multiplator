@@ -22,6 +22,8 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
 
   var numbers = List<int>.generate(10, (index) => index + 1);
 
+  bool helperNumbers = true;
+
   @override
   void initState() {
     super.initState();
@@ -129,23 +131,29 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                             height: cellHeight,
                             //color: Colors.blue[(colIndex + rowIndex *  10) %  900],
                             child: (colIndex == 0 && rowIndex == 0)
-                                ? const Center(child: null)
-                                // Text('X',
-                                //             style: Theme.of(context)
-                                //                 .textTheme
-                                //                 .bodyMedium))
+                                ? Center(
+                                    child: (helperNumbers == false)
+                                        ? null
+                                        : Text('X',
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyMedium))
                                 : (rowIndex == 0)
-                                    ? const Center(child: null)
-                                    // Text('${colIndex}',
-                                    //     style: Theme.of(context)
-                                    //         .textTheme
-                                    //         .bodyMedium))
+                                    ? Center(
+                                        child: (helperNumbers == false)
+                                            ? null
+                                            : Text('${colIndex}',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyMedium))
                                     : (colIndex == 0)
-                                        ? const Center(child: null)
-                                        // Text('${rowIndex}',
-                                        //     style: Theme.of(context)
-                                        //         .textTheme
-                                        //         .bodyMedium))
+                                        ? Center(
+                                            child: (helperNumbers == false)
+                                                ? null
+                                                : Text('${rowIndex}',
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .bodyMedium))
                                         :
                                         //Center(child: Text('(${rowIndex +  2}, ${colIndex +  2})')),
                                         Center(

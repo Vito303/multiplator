@@ -25,7 +25,7 @@ void showCorrectMessage(BuildContext context, int targetColIndex, int targetRowI
               mainAxisSize: MainAxisSize.min, // This makes the column shrink to fit its content
               children: [
                 Text(
-                  '${targetColIndex} x ${targetRowIndex} = ${multipla}',
+                  '$targetColIndex x $targetRowIndex = $multipla',
                   style: Theme.of(context).textTheme.labelMedium,
                 ),
                 const Text('Kar tako naprej :)'),
@@ -62,7 +62,7 @@ void showWrongMessage(BuildContext context, int targetColIndex, int targetRowInd
               mainAxisSize: MainAxisSize.min, // This makes the column shrink to fit its content
               children: [
                 Text(
-                  '${targetColIndex} x ${targetRowIndex} = ?',
+                  '$targetColIndex x $targetRowIndex = ?',
                   style: Theme.of(context).textTheme.labelSmall,
                 ),
               ],

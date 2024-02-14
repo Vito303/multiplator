@@ -32,7 +32,7 @@ class _QuizState extends State<Quiz> {
 
     return MaterialApp(
       theme: ThemeData(
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           bodyMedium: TextStyle(
             fontSize:  12,
             fontWeight: FontWeight.bold,

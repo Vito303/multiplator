@@ -6,7 +6,7 @@ void showCorrectMessage(BuildContext context, int targetColIndex, int targetRowI
     barrierDismissible: false,
     builder: (context) {
       // Schedule a delayed dismissal of the alert dialog after  3 seconds
-      Future.delayed(Duration(seconds:  2), () {
+      Future.delayed(const Duration(seconds:  2), () {
         Navigator.of(context).pop(); // Close the dialog
       });
 
@@ -18,7 +18,7 @@ void showCorrectMessage(BuildContext context, int targetColIndex, int targetRowI
         content:
         SingleChildScrollView(
           child: ConstrainedBox(
-            constraints: BoxConstraints(
+            constraints: const BoxConstraints(
               minHeight:  0, // Ensures the column doesn't expand beyond its children's height
             ),
             child: Column(
@@ -28,7 +28,7 @@ void showCorrectMessage(BuildContext context, int targetColIndex, int targetRowI
                   '${targetColIndex} x ${targetRowIndex} = ${multipla}',
                   style: Theme.of(context).textTheme.labelMedium,
                 ),
-                Text('Kar tako naprej :)'),
+                const Text('Kar tako naprej :)'),
                 // ... other children
               ],
             ),
@@ -45,7 +45,7 @@ void showWrongMessage(BuildContext context, int targetColIndex, int targetRowInd
     barrierDismissible: false,
     builder: (context) {
       // Schedule a delayed dismissal of the alert dialog after  3 seconds
-      Future.delayed(Duration(seconds:  3), () {
+      Future.delayed(const Duration(seconds:  3), () {
         Navigator.of(context).pop(); // Close the dialog
       });
 
@@ -55,7 +55,7 @@ void showWrongMessage(BuildContext context, int targetColIndex, int targetRowInd
         content:
         SingleChildScrollView(
           child: ConstrainedBox(
-            constraints: BoxConstraints(
+            constraints: const BoxConstraints(
               minHeight:  0, // Ensures the column doesn't expand beyond its children's height
             ),
             child: Column(

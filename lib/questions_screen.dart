@@ -29,7 +29,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     dynamic columnWidthsMap =
         List<int>.generate(numberOfColumns, (index) => index)
             .asMap()
-            .map((_, index) => MapEntry(index, FlexColumnWidth()));
+            .map((_, index) => MapEntry(index, const FlexColumnWidth()));
     generateNew();
   }
 
@@ -48,11 +48,11 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
         // Return type is Future<T> because the showDialog function returns a Future.
         // Here, we return an AlertDialog widget.
         return AlertDialog(
-          title: Text('Pravilno'),
-          content: Text('This is the content of my dialog.'),
+          title: const Text('Pravilno'),
+          content: const Text('This is the content of my dialog.'),
           actions: <Widget>[
             TextButton(
-              child: Text('Close'),
+              child: const Text('Close'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -66,7 +66,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(context) {
     return Container(
-      padding: EdgeInsets.only(top: 10, right: 20, bottom: 20),
+      padding: const EdgeInsets.only(top: 10, right: 20, bottom: 20),
       child: Column(
         children: [
           Padding(
@@ -78,14 +78,14 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                 children: [
                   Text(targetColIndex.toString(),
                       style: Theme.of(context).textTheme.labelLarge),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Text('X', style: Theme.of(context).textTheme.labelLarge),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Text(targetRowIndex.toString(),
                       style: Theme.of(context).textTheme.labelLarge),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Text('=', style: Theme.of(context).textTheme.labelLarge),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Text('?', style: Theme.of(context).textTheme.labelLarge),
                 ],
               ),
@@ -129,21 +129,21 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                             child:
                               (colIndex == 0 && rowIndex == 0)
                                 ?
-                                Center(
+                                const Center(
                                     child: null)
                             // Text('X',
                             //             style: Theme.of(context)
                             //                 .textTheme
                             //                 .bodyMedium))
                                 : (rowIndex == 0)
-                                    ? Center(
+                                    ? const Center(
                                         child: null)
                                         // Text('${colIndex}',
                                         //     style: Theme.of(context)
                                         //         .textTheme
                                         //         .bodyMedium))
                                     : (colIndex == 0)
-                                        ? Center(
+                                        ? const Center(
                                             child: null)
                                             // Text('${rowIndex}',
                                             //     style: Theme.of(context)

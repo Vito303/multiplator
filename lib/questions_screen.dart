@@ -105,20 +105,22 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                   children: List.generate(11, (rowIndex) {
                     return TableRow(
                       children: List.generate(11, (colIndex) {
-                        return
-                           GestureDetector(
+                        return GestureDetector(
                           onTap: () {
-                            String cellText = multiplication_table[rowIndex -  1][colIndex -  1].toString();
+                            String cellText = multiplication_table[rowIndex - 1]
+                                    [colIndex - 1]
+                                .toString();
                             var multipla = (targetColIndex * targetRowIndex);
                             if (cellText == multipla.toString()) {
-                              showCorrectMessage(context, targetColIndex, targetRowIndex, multipla);
+                              showCorrectMessage(context, targetColIndex,
+                                  targetRowIndex, multipla);
                               generateNew();
                             } else {
-                              showWrongMessage(context, targetColIndex, targetRowIndex);
+                              showWrongMessage(
+                                  context, targetColIndex, targetRowIndex);
                             }
                           },
-                          child:
-                          Container(
+                          child: Container(
                             decoration: colIndex == 0 || rowIndex == 0
                                 ? null
                                 : BoxDecoration(
@@ -126,29 +128,24 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                             width: cellWidth,
                             height: cellHeight,
                             //color: Colors.blue[(colIndex + rowIndex *  10) %  900],
-                            child:
-                              (colIndex == 0 && rowIndex == 0)
-                                ?
-                                const Center(
-                                    child: null)
-                            // Text('X',
-                            //             style: Theme.of(context)
-                            //                 .textTheme
-                            //                 .bodyMedium))
+                            child: (colIndex == 0 && rowIndex == 0)
+                                ? const Center(child: null)
+                                // Text('X',
+                                //             style: Theme.of(context)
+                                //                 .textTheme
+                                //                 .bodyMedium))
                                 : (rowIndex == 0)
-                                    ? const Center(
-                                        child: null)
-                                        // Text('${colIndex}',
+                                    ? const Center(child: null)
+                                    // Text('${colIndex}',
+                                    //     style: Theme.of(context)
+                                    //         .textTheme
+                                    //         .bodyMedium))
+                                    : (colIndex == 0)
+                                        ? const Center(child: null)
+                                        // Text('${rowIndex}',
                                         //     style: Theme.of(context)
                                         //         .textTheme
                                         //         .bodyMedium))
-                                    : (colIndex == 0)
-                                        ? const Center(
-                                            child: null)
-                                            // Text('${rowIndex}',
-                                            //     style: Theme.of(context)
-                                            //         .textTheme
-                                            //         .bodyMedium))
                                         :
                                         //Center(child: Text('(${rowIndex +  2}, ${colIndex +  2})')),
                                         Center(
@@ -161,7 +158,6 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                         );
                       }).toList(),
                     );
-
                   }).toList(),
                 );
               },

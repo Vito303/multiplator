@@ -25,7 +25,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   void initState() {
     super.initState();
-    final numberOfColumns = 11;
+    const numberOfColumns = 11;
     dynamic columnWidthsMap =
         List<int>.generate(numberOfColumns, (index) => index)
             .asMap()
